@@ -1,0 +1,7 @@
+/root/codes/toymodel/bd/CMakeFiles/install/strip.dir
+/root/codes/toymodel/bd/CMakeFiles/install/local.dir
+/root/codes/toymodel/bd/CMakeFiles/exampleB4a.dir
+/root/codes/toymodel/bd/CMakeFiles/rebuild_cache.dir
+/root/codes/toymodel/bd/CMakeFiles/edit_cache.dir
+/root/codes/toymodel/bd/CMakeFiles/install.dir
+/root/codes/toymodel/bd/CMakeFiles/list_install_components.dir
