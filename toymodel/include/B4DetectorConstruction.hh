@@ -73,8 +73,7 @@ class B4DetectorConstruction : public G4VUserDetectorConstruction
     // data members
     //    
     G4VPhysicalVolume*   fAbsorberPV; // the absorber physical volume
-    G4VPhysicalVolume*   fGapPV;      // the gap physical volume
-    const G4int kNCubes = 2;
+//    G4VPhysicalVolume*   fGapPV;      // the gap physical volume
     G4bool  fCheckOverlaps; // option to activate checking of volumes overlaps
 };
 
@@ -84,9 +83,9 @@ inline const G4VPhysicalVolume* B4DetectorConstruction::GetAbsorberPV() const {
   return fAbsorberPV; 
 }
 
-inline const G4VPhysicalVolume* B4DetectorConstruction::GetGapPV() const  {
-  return fGapPV;
-}
+//inline const G4VPhysicalVolume* B4DetectorConstruction::GetGapPV() const  {
+//  return fGapPV;
+//}
 
      
 

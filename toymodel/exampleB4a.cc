@@ -38,8 +38,7 @@
 
 #include "G4UImanager.hh"
 #include "G4UIcommand.hh"
-#include "FTFP_BERT.hh"
-
+#include "B3PhysicsList.hh"
 #include "Randomize.hh"
 
 #include "G4VisExecutive.hh"
@@ -113,8 +112,7 @@ int main(int argc,char** argv)
   auto detConstruction = new B4DetectorConstruction();
   runManager->SetUserInitialization(detConstruction);
 
-  auto physicsList = new FTFP_BERT;
-  runManager->SetUserInitialization(physicsList);
+  runManager->SetUserInitialization(new B3PhysicsList);
     
   auto actionInitialization = new B4aActionInitialization(detConstruction);
   runManager->SetUserInitialization(actionInitialization);

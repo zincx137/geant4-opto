@@ -51,18 +51,18 @@ class B4aEventAction : public G4UserEventAction
     virtual void  BeginOfEventAction(const G4Event* event);
     virtual void    EndOfEventAction(const G4Event* event);
     
-    void AddQty(G4int nCopy, G4double de);
+//    void AddQty(G4int nCopy, G4double de);
     
   private:
     G4double*  fEdep;
-    const G4int kNCubes = 2;
+    const G4int kNCubes = 1;
 };
 
 // inline functions
 
-inline void B4aEventAction::AddQty(G4int nCopy, G4double de) {
-  fEdep[nCopy] += de;
-}
+//inline void B4aEventAction::AddQty(G4int nCopy, G4double de) {
+//  fEdep[nCopy] += de;
+//}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 

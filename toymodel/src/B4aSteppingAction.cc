@@ -33,6 +33,7 @@
 
 #include "G4Step.hh"
 #include "G4RunManager.hh"
+#include "G4SystemOfUnits.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -56,20 +57,21 @@ void B4aSteppingAction::UserSteppingAction(const G4Step* step)
 // Collect energy and track length step by step
 
   // get volume of the current step
-  auto volume = step->GetPreStepPoint()->GetTouchableHandle()->GetVolume();
-  auto nCopy = step->GetPreStepPoint()->GetTouchableHandle()->GetReplicaNumber();
-  // energy deposit
-  auto edep = step->GetTotalEnergyDeposit();
+//  auto volume = step->GetPreStepPoint()->GetTouchableHandle()->GetVolume();
+//  auto nCopy = step->GetPreStepPoint()->GetTouchableHandle()->GetReplicaNumber();
+//  // energy deposit
+//  auto edep = step->GetTotalEnergyDeposit();
       
-  if ( volume == fDetConstruction->GetAbsorberPV() ) {
-    G4cout << "Absorber #" << nCopy << G4endl;
-    fEventAction->AddQty(nCopy, edep);
-  }
+//  if ( volume == fDetConstruction->GetAbsorberPV() ) {
+//    G4cout << "Absorber #" << nCopy << G4endl;
+//    if ( edep > 0.1*keV)
+//    fEventAction->AddQty(nCopy, edep);
+//  }
   
-  if ( volume == fDetConstruction->GetGapPV() ) {
-    G4cout << "Gap #" << nCopy << G4endl;
-    fEventAction->AddQty(nCopy, edep);
-  }
+//  if ( volume == fDetConstruction->GetGapPV() ) {
+//    G4cout << "Gap #" << nCopy << G4endl;
+//    fEventAction->AddQty(nCopy, edep);
+//  }
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

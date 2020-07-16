@@ -1,0 +1,1617 @@
+
+**************************************************************
+ Geant4 version Name: geant4-10-06-patch-02 [MT]   (29-May-2020)
+  << in Multi-threaded mode >> 
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+
+***** Table : Nb of materials = 3 *****
+
+ Material: G4_GALLIUM_ARSENIDE    density:  5.310 g/cm3   RadL:   2.296 cm   Nucl.Int.Length:  27.466 cm 
+                       Imean: 384.900 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Ga (Ga)   Z = 31.0   N =    70   A = 69.723 g/mole
+         --->  Isotope:  Ga69   Z = 31   N =  69   A =  68.93 g/mole   abundance: 60.108 %
+         --->  Isotope:  Ga71   Z = 31   N =  71   A =  70.92 g/mole   abundance: 39.892 %
+          ElmMassFraction:  48.20 %  ElmAbundance  50.00 % 
+
+   --->  Element: As (As)   Z = 33.0   N =    75   A = 74.922 g/mole
+         --->  Isotope:  As75   Z = 33   N =  75   A =  74.92 g/mole   abundance: 100.000 %
+          ElmMassFraction:  51.80 %  ElmAbundance  50.00 % 
+
+
+ Material: liquidArgon    density:  1.390 g/cm3   RadL:  14.064 cm   Nucl.Int.Length:  86.076 cm 
+                       Imean: 188.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Ar (Ar)   Z = 18.0   N =    40   A = 39.948 g/mole
+         --->  Isotope:  Ar36   Z = 18   N =  36   A =  35.97 g/mole   abundance:  0.337 %
+         --->  Isotope:  Ar38   Z = 18   N =  38   A =  37.96 g/mole   abundance:  0.063 %
+         --->  Isotope:  Ar40   Z = 18   N =  40   A =  39.96 g/mole   abundance: 99.600 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+ Material: Galactic    density:  0.000 kg/m3   RadL: 204310101.835 pc   Nucl.Int.Length: 113427275.267 pc 
+                       Imean:  19.200 eV   temperature:   2.73 K  pressure:   0.00 atm
+
+   --->  Element: H (H)   Z =  1.0   N =     1   A =  1.008 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance: 99.989 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:  0.011 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+
+Checking overlaps for volume Abso (G4Box) ... OK! 
+absoThickness:1
+
+### ===  Deexcitation model UAtomDeexcitation is activated for 1 region:
+          DefaultRegionForTheWorld  1  0  0
+### ===  Ignore cuts flag:   0
+
+phot:  for gamma SubType=12 BuildTable=0
+      LambdaPrime table from 200 keV to 100 TeV in 174 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+ LivermorePhElectric : Emin=    0 eV  Emax=  100 TeV  SauterGavrila Fluo
+
+compt:  for gamma SubType=13 BuildTable=1
+      Lambda table from 100 eV  to 1 MeV, 20 bins/decade, spline: 1
+      LambdaPrime table from 1 MeV to 100 TeV in 160 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LowEPComptonModel : Emin=    0 eV  Emax=   20 MeV Fluo
+        KleinNishina : Emin=   20 MeV Emax=  100 TeV Fluo
+
+conv:  for gamma SubType=14 BuildTable=1
+      Lambda table from 1.022 MeV to 100 TeV, 20 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+      BetheHeitler5D : Emin=    0 eV  Emax=  100 TeV  ModifiedTsai
+
+Rayl:  for gamma SubType=11 BuildTable=1
+      Lambda table from 100 eV  to 100 keV, 20 bins/decade, spline: 0
+      LambdaPrime table from 100 keV to 100 TeV in 180 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh : Emin=    0 eV  Emax=  100 TeV  CullenGenerator
+
+msc:  for e-  SubType= 10
+      RangeFactor= 0.08, stepLimType: 2, latDisp: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  GoudsmitSaunderson : Emin=    0 eV  Emax=  100 MeV Nbins=120 100 eV  - 100 MeV
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=120 100 MeV - 100 TeV
+
+eIoni:  for e-  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      StepFunction=(0.2, 0.01 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       LowEnergyIoni : Emin=    0 eV  Emax=  100 keV  deltaVI
+        MollerBhabha : Emin=  100 keV Emax=  100 TeV  deltaVI
+
+eBrem:  for e-  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  AngularGen2BS
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  AngularGen2BS
+
+ePairProd:  for e-  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      Sampling table 25x1001; from 0.1 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           ePairProd : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for e-, integral:1  SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 20 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for e+  SubType= 10
+      RangeFactor= 0.08, stepLimType: 2, latDisp: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  GoudsmitSaunderson : Emin=    0 eV  Emax=  100 MeV Nbins=120 100 eV  - 100 MeV
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=120 100 MeV - 100 TeV
+
+eIoni:  for e+  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      StepFunction=(0.2, 0.01 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             PenIoni : Emin=    0 eV  Emax=  100 keV
+        MollerBhabha : Emin=  100 keV Emax=  100 TeV  deltaVI
+
+eBrem:  for e+  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  AngularGen2BS
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  AngularGen2BS
+
+ePairProd:  for e+  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      Sampling table 25x1001; from 0.1 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           ePairProd : Emin=    0 eV  Emax=  100 TeV
+
+annihil:  for e+, integral:1  SubType=5 BuildTable=0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for e+, integral:1  SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 20 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for proton  SubType= 10
+      RangeFactor= 0.2, stepLimType: 0, latDisp: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=240 100 eV  - 100 TeV
+
+hIoni:  for proton  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.02 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=    2 MeV  deltaVI
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV  deltaVI
+
+hBrems:  for proton  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV
+
+hPairProd:  for proton  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for proton, integral:1  SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 20 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for GenericIon  SubType= 10
+      RangeFactor= 0.2, stepLimType: 0, latDisp: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+
+ionIoni:  for GenericIon  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.001 mm), integ: 1, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+         ParamICRU73 : Emin=    0 eV  Emax=  100 TeV  deltaVI
+
+nuclearStopping:  for GenericIon SubType=8 BuildTable=0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping : Emin=    0 eV  Emax=    1 MeV
+
+msc:  for alpha  SubType= 10
+      RangeFactor= 0.2, stepLimType: 0, latDisp: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV Nbins=240 100 eV  - 100 TeV
+
+ionIoni:  for alpha  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.02 mm), integ: 1, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon : Emin=    0 eV  Emax=7.9452 MeV  deltaVI
+          BetheBloch : Emin=7.9452 MeV Emax=  100 TeV  deltaVI
+
+nuclearStopping:  for alpha SubType=8 BuildTable=0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping : Emin=    0 eV  Emax=    1 MeV
+
+msc:  for anti_proton  SubType= 10
+      RangeFactor= 0.2, stepLimType: 0, latDisp: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=240 100 eV  - 100 TeV
+
+hIoni:  for anti_proton  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.02 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=    2 MeV  deltaVI
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV  deltaVI
+
+hBrems:  for anti_proton  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV
+
+hPairProd:  for anti_proton  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for anti_proton, integral:1  SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 20 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon+  SubType= 10
+      RangeFactor= 0.2, stepLimType: 0, latDisp: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=240 100 eV  - 100 TeV
+
+hIoni:  for kaon+  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.02 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=1.05231 MeV  deltaVI
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV  deltaVI
+
+hBrems:  for kaon+  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV
+
+hPairProd:  for kaon+  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for kaon+, integral:1  SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 20 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon-  SubType= 10
+      RangeFactor= 0.2, stepLimType: 0, latDisp: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=240 100 eV  - 100 TeV
+
+hIoni:  for kaon-  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.02 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=1.05231 MeV  deltaVI
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV  deltaVI
+
+hBrems:  for kaon-  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV
+
+hPairProd:  for kaon-  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for kaon-, integral:1  SubType=1 BuildTable=1
+      Used Lambda table of kaon+
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu+  SubType= 10
+      RangeFactor= 0.2, stepLimType: 0, latDisp: 1, polarAngLim(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=240 100 eV  - 100 TeV
+
+muIoni:  for mu+  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.02 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=  200 keV  deltaVI
+          BetheBloch : Emin=  200 keV Emax=    1 GeV  deltaVI
+        MuBetheBloch : Emin=    1 GeV Emax=  100 TeV
+
+muBrems:  for mu+  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV
+
+muPairProd:  for mu+  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      Sampling table 21x1001; from 1 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for mu+, integral:1  SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 20 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu-  SubType= 10
+      RangeFactor= 0.2, stepLimType: 0, latDisp: 1, polarAngLim(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=240 100 eV  - 100 TeV
+
+muIoni:  for mu-  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.02 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=  200 keV  deltaVI
+          BetheBloch : Emin=  200 keV Emax=    1 GeV  deltaVI
+        MuBetheBloch : Emin=    1 GeV Emax=  100 TeV
+
+muBrems:  for mu-  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV
+
+muPairProd:  for mu-  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      Sampling table 21x1001; from 1 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for mu-, integral:1  SubType=1 BuildTable=1
+      Used Lambda table of mu+
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for pi+  SubType= 10
+      RangeFactor= 0.2, stepLimType: 0, latDisp: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=240 100 eV  - 100 TeV
+
+hIoni:  for pi+  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.02 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=297.505 keV  deltaVI
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV  deltaVI
+
+hBrems:  for pi+  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV
+
+hPairProd:  for pi+  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for pi+, integral:1  SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 20 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for pi-  SubType= 10
+      RangeFactor= 0.2, stepLimType: 0, latDisp: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=240 100 eV  - 100 TeV
+
+hIoni:  for pi-  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.02 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=297.505 keV  deltaVI
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV  deltaVI
+
+hBrems:  for pi-  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV
+
+hPairProd:  for pi-  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 240 bins
+      Lambda tables from threshold to 100 TeV, 20 bins/decade, spline: 1
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for pi-, integral:1  SubType=1 BuildTable=1
+      Used Lambda table of pi+
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+G4VDecayChannel::FillDaughters  [ kaon+ ]1:nu_mu is not defined !!
+ The BR of this decay mode is set to zero 
+G4VDecayChannel::FillDaughters  [ kaon+ ]1:pi0 is not defined !!
+ The BR of this decay mode is set to zero 
+G4VDecayChannel::FillDaughters  [ kaon+ ]0:pi0 is not defined !!
+ The BR of this decay mode is set to zero 
+G4VDecayChannel::FillDaughters  [ kaon+ ]0:pi0 is not defined !!
+ The BR of this decay mode is set to zero 
+G4VDecayChannel::FillDaughters  [ kaon+ ]1:pi0 is not defined !!
+ The BR of this decay mode is set to zero 
+G4VDecayChannel::FillDaughters  [ kaon- ]1:anti_nu_mu is not defined !!
+ The BR of this decay mode is set to zero 
+G4VDecayChannel::FillDaughters  [ kaon- ]1:pi0 is not defined !!
+ The BR of this decay mode is set to zero 
+G4VDecayChannel::FillDaughters  [ kaon- ]0:pi0 is not defined !!
+ The BR of this decay mode is set to zero 
+G4VDecayChannel::FillDaughters  [ kaon- ]0:pi0 is not defined !!
+ The BR of this decay mode is set to zero 
+G4VDecayChannel::FillDaughters  [ kaon- ]1:pi0 is not defined !!
+ The BR of this decay mode is set to zero 
+G4VDecayChannel::FillDaughters  [ mu+ ]1:nu_e is not defined !!
+ The BR of this decay mode is set to zero 
+G4VDecayChannel::FillDaughters  [ mu- ]1:anti_nu_e is not defined !!
+ The BR of this decay mode is set to zero 
+G4VDecayChannel::FillDaughters  [ pi+ ]1:nu_mu is not defined !!
+ The BR of this decay mode is set to zero 
+G4VDecayChannel::FillDaughters  [ pi- ]1:anti_nu_mu is not defined !!
+ The BR of this decay mode is set to zero 
+### Run 0 starts.
+G4WT0 > ### Run 0 starts on worker thread 0.
+G4WT0 > --> Event 0 starts with initial seeds (36614947,86624835).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 1 starts with initial seeds (58179565,85898768).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 2 starts with initial seeds (25695191,2618729).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 3 starts with initial seeds (75964237,48829043).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 4 starts with initial seeds (84997169,6846563).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 5 starts with initial seeds (82862931,72395836).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 6 starts with initial seeds (36386710,90928399).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 7 starts with initial seeds (18241590,35573006).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 8 starts with initial seeds (49408602,21060420).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 9 starts with initial seeds (45765130,7706922).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 10 starts with initial seeds (63681913,64119198).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 11 starts with initial seeds (28192129,1919508).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 12 starts with initial seeds (75747846,56200215).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 13 starts with initial seeds (34332343,89419842).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 14 starts with initial seeds (56802687,34906898).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0   -0.388     0.511        0    0.888     0.988        Abso Rayl
+G4WT0 >     3 0.000359   0.0019     -0.5     0.511        0    0.112       1.1       World Transportation
+G4WT0 >     4 0.000679  0.00358     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 15 starts with initial seeds (68536206,95591016).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 16 starts with initial seeds (43022967,74655575).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 17 starts with initial seeds (89651554,83412546).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 18 starts with initial seeds (65460776,87590980).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 19 starts with initial seeds (79199277,81497766).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 20 starts with initial seeds (67650545,19103854).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 21 starts with initial seeds (4004576,93777470).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 22 starts with initial seeds (51334405,36774647).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 23 starts with initial seeds (22989324,55509100).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 24 starts with initial seeds (29987982,42937371).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 25 starts with initial seeds (647646,90973537).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 26 starts with initial seeds (41649783,16691032).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 27 starts with initial seeds (83399977,55711164).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 28 starts with initial seeds (89551767,46403638).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 29 starts with initial seeds (51899807,50040008).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 30 starts with initial seeds (76229464,18570364).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 31 starts with initial seeds (30082218,50131968).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 32 starts with initial seeds (21133067,58185490).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 33 starts with initial seeds (87296748,10910825).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 34 starts with initial seeds (93094894,85123523).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 35 starts with initial seeds (19626420,54604240).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 36 starts with initial seeds (28248017,13093313).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 37 starts with initial seeds (23276372,89137295).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 38 starts with initial seeds (47152379,85584831).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 39 starts with initial seeds (40912931,25659612).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0    -0.28     0.261    5e-06     0.78      0.88        Abso compt
+G4WT0 >     3     -0.2    0.103   -0.288     0.261        0    0.225       1.1       World Transportation
+G4WT0 >     4    -0.24    0.123    -0.29     0.261        0    0.045      1.15  OutOfWorld Transportation
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = e-,   Track ID = 2,   Parent ID = 1
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0    -0.28      0.25        0        0         0        Abso initStep
+G4WT0 >     1  0.00461  0.00175   -0.293     0.232   0.0179   0.0152    0.0152        Abso msc
+G4WT0 >     2   0.0173 -0.00231   -0.314     0.189   0.0437   0.0494    0.0646        Abso eIoni
+G4WT0 >     3   0.0289   0.0121   -0.313     0.156   0.0325   0.0399     0.104        Abso eIoni
+G4WT0 >     4   0.0283  0.00642   -0.326     0.111   0.0456   0.0333     0.138        Abso eIoni
+G4WT0 >     5   0.0279  0.00216   -0.319    0.0801   0.0306   0.0248     0.163        Abso eIoni
+G4WT0 >     6   0.0319  0.00146   -0.322    0.0268   0.0533   0.0194     0.182        Abso eIoni
+G4WT0 >     7   0.0326  0.00168   -0.321         0   0.0268  0.00466     0.187        Abso eIoni
+G4WT0 > --> Event 40 starts with initial seeds (6398510,21506784).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 41 starts with initial seeds (8218892,37539057).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 42 starts with initial seeds (82341386,21979583).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 43 starts with initial seeds (85302728,24213717).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 44 starts with initial seeds (27035000,54553200).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 45 starts with initial seeds (68349877,25973744).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 46 starts with initial seeds (83858932,22641591).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 47 starts with initial seeds (44609501,92862177).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 48 starts with initial seeds (89733619,38382857).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 49 starts with initial seeds (78402102,87572936).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 50 starts with initial seeds (65288103,69595319).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 51 starts with initial seeds (39266296,8072296).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 52 starts with initial seeds (21938428,92574033).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 53 starts with initial seeds (32908325,69494066).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 54 starts with initial seeds (52265042,60546695).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 55 starts with initial seeds (67195632,49713883).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 56 starts with initial seeds (66126775,7394570).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 57 starts with initial seeds (43147606,89674652).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 58 starts with initial seeds (50303705,37428384).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 59 starts with initial seeds (87142727,37279479).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 60 starts with initial seeds (71214791,21003239).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 61 starts with initial seeds (57427697,42755788).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 62 starts with initial seeds (28316699,88047962).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 63 starts with initial seeds (91106474,35504759).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 64 starts with initial seeds (57570600,86697437).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 65 starts with initial seeds (37299158,65856618).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 66 starts with initial seeds (59272978,9186248).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 67 starts with initial seeds (41255206,82517815).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 68 starts with initial seeds (10560457,74165934).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 69 starts with initial seeds (92383094,4193853).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 70 starts with initial seeds (93031104,53970734).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 71 starts with initial seeds (40353670,38119166).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 72 starts with initial seeds (39070007,55770054).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 73 starts with initial seeds (28221539,6744525).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 74 starts with initial seeds (87370638,37858163).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 75 starts with initial seeds (53259455,48882639).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 76 starts with initial seeds (69386249,57924537).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 77 starts with initial seeds (57341226,69545107).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 78 starts with initial seeds (34106463,10606256).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 79 starts with initial seeds (11005140,56750342).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 80 starts with initial seeds (4148535,68054522).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 81 starts with initial seeds (42117383,22625082).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 82 starts with initial seeds (39475123,49616309).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 83 starts with initial seeds (9805502,64049885).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 84 starts with initial seeds (13936704,19442072).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 85 starts with initial seeds (97732378,79188341).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 86 starts with initial seeds (6452342,81084629).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 87 starts with initial seeds (39791587,3917352).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0    0.143     0.234   0.0118    0.357     0.457        Abso compt
+G4WT0 >     3     -0.2    0.126    0.204     0.234        0    0.244     0.701       World Transportation
+G4WT0 >     4    -0.24    0.152    0.216     0.234        0   0.0488      0.75  OutOfWorld Transportation
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = e-,   Track ID = 2,   Parent ID = 1
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0    0.143     0.265        0        0         0        Abso initStep
+G4WT0 >     1 0.000498   0.0024    0.128     0.239   0.0261   0.0166    0.0166        Abso msc
+G4WT0 >     2  -0.0069  0.00956    0.104     0.173   0.0665    0.051    0.0676        Abso eIoni
+G4WT0 >     3 -0.00702   0.0254    0.108     0.139   0.0338   0.0365     0.104        Abso eIoni
+G4WT0 >     4  0.00267   0.0263    0.115     0.112   0.0265   0.0299     0.134        Abso eIoni
+G4WT0 >     5  0.00977   0.0309    0.113    0.0792   0.0332   0.0251     0.159        Abso eIoni
+G4WT0 >     6  0.00632   0.0313    0.117    0.0421   0.0372   0.0192     0.178        Abso eIoni
+G4WT0 >     7  0.00622     0.03    0.118   0.00651   0.0356   0.0101     0.188        Abso eIoni
+G4WT0 >     8  0.00626   0.0299    0.118         0  0.00651 0.000431     0.189        Abso eIoni
+G4WT0 > --> Event 88 starts with initial seeds (3359867,13316219).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 89 starts with initial seeds (16451951,18649003).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 90 starts with initial seeds (8816069,86984670).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 91 starts with initial seeds (46726382,18601838).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 92 starts with initial seeds (1882300,60797516).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 93 starts with initial seeds (50843874,93756939).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 94 starts with initial seeds (3613529,7000070).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 95 starts with initial seeds (37684949,5136680).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 96 starts with initial seeds (23837130,85943687).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 97 starts with initial seeds (24056335,21933764).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 98 starts with initial seeds (56201222,49353925).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0     -0.5     0.511        0        1       1.1       World Transportation
+G4WT0 >     3        0        0     -0.6     0.511        0      0.1       1.2  OutOfWorld Transportation
+G4WT0 > --> Event 99 starts with initial seeds (93547223,29429648).
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = gamma,   Track ID = 1,   Parent ID = 0
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0      0.6     0.511        0        0         0       World initStep
+G4WT0 >     1        0        0      0.5     0.511        0      0.1       0.1        Abso Transportation
+G4WT0 >     2        0        0 -0.00244     0.441 8.12e-06    0.502     0.602        Abso compt
+G4WT0 >     3    0.152     -0.2   -0.396     0.441        0    0.467      1.07       World Transportation
+G4WT0 >     4    0.182    -0.24   -0.475     0.441        0   0.0933      1.16  OutOfWorld Transportation
+G4WT0 > 
+G4WT0 > *********************************************************************************************************
+G4WT0 > * G4Track Information:   Particle = e-,   Track ID = 2,   Parent ID = 1
+G4WT0 > *********************************************************************************************************
+G4WT0 > 
+G4WT0 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
+G4WT0 >     0        0        0 -0.00244    0.0698        0        0         0        Abso initStep
+G4WT0 >     1 -0.000421  0.00168 -0.00309    0.0663  0.00342  0.00191   0.00191        Abso msc
+G4WT0 >     2 -0.00124   0.0051 -0.00404    0.0471   0.0192   0.0167    0.0186        Abso eIoni
+G4WT0 >     3   -0.002  0.00531 -0.00592   0.00917    0.038   0.0119    0.0305        Abso eIoni
+G4WT0 >     4 -0.00203  0.00527 -0.00604         0  0.00917 0.000762    0.0313        Abso eIoni
+G4WT0 > !!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!

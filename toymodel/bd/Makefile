@@ -199,6 +199,33 @@ exampleB4a.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/exampleB4a.dir/build.make CMakeFiles/exampleB4a.dir/exampleB4a.cc.s
 .PHONY : exampleB4a.cc.s
 
+src/B3PhysicsList.o: src/B3PhysicsList.cc.o
+
+.PHONY : src/B3PhysicsList.o
+
+# target to build an object file
+src/B3PhysicsList.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exampleB4a.dir/build.make CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.o
+.PHONY : src/B3PhysicsList.cc.o
+
+src/B3PhysicsList.i: src/B3PhysicsList.cc.i
+
+.PHONY : src/B3PhysicsList.i
+
+# target to preprocess a source file
+src/B3PhysicsList.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exampleB4a.dir/build.make CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.i
+.PHONY : src/B3PhysicsList.cc.i
+
+src/B3PhysicsList.s: src/B3PhysicsList.cc.s
+
+.PHONY : src/B3PhysicsList.s
+
+# target to generate assembly for a file
+src/B3PhysicsList.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exampleB4a.dir/build.make CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.s
+.PHONY : src/B3PhysicsList.cc.s
+
 src/B4DetectorConstruction.o: src/B4DetectorConstruction.cc.o
 
 .PHONY : src/B4DetectorConstruction.o
@@ -377,6 +404,9 @@ help:
 	@echo "... exampleB4a.o"
 	@echo "... exampleB4a.i"
 	@echo "... exampleB4a.s"
+	@echo "... src/B3PhysicsList.o"
+	@echo "... src/B3PhysicsList.i"
+	@echo "... src/B3PhysicsList.s"
 	@echo "... src/B4DetectorConstruction.o"
 	@echo "... src/B4DetectorConstruction.i"
 	@echo "... src/B4DetectorConstruction.s"

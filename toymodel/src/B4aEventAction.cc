@@ -44,24 +44,26 @@ B4aEventAction::B4aEventAction()
  : G4UserEventAction()
 {
     //The kNCubes numbers are hard wired!!! Need to change with the geometry of the detector
-    fEdep = new G4double [kNCubes + 10];
+//    fEdep = new G4double [kNCubes + 10];
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 B4aEventAction::~B4aEventAction()
 {
-    delete fEdep;
+//    delete fEdep;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void B4aEventAction::BeginOfEventAction(const G4Event* /*event*/)
 {  
+    G4cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << G4endl;
+
   // initialisation per event
   // nCopy 0 is world.
-    for(G4int i = 0; i <= kNCubes; i++)
-        fEdep[i] = 0.;
+//    for(G4int i = 0; i <= kNCubes; i++)
+//        fEdep[i] = 0.;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -70,19 +72,20 @@ void B4aEventAction::EndOfEventAction(const G4Event* event)
 {
   // Accumulate statistics
   //
+    G4cout << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << G4endl;
 
   // get analysis manager
-  auto analysisManager = G4AnalysisManager::Instance();
+//  auto analysisManager = G4AnalysisManager::Instance();
 
   // fill histograms
-  analysisManager->FillH1(1, fEdep[1]);
-  analysisManager->FillH1(2, fEdep[2]);
+//  analysisManager->FillH1(0, fEdep[1]);
+//  analysisManager->FillH1(2, fEdep[2]);
   
   // fill ntuple
-  analysisManager->FillNtupleDColumn(1, fEdep[1]);
-  analysisManager->FillNtupleDColumn(2, fEdep[2]);
+//  analysisManager->FillNtupleDColumn(0, fEdep[1]);
+//  analysisManager->FillNtupleDColumn(2, fEdep[2]);
 
-  analysisManager->AddNtupleRow();  
+//  analysisManager->AddNtupleRow();
   
   // Print per event (modulo n)
   //

@@ -73,9 +73,22 @@ CMakeFiles/exampleB4a.dir/exampleB4a.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/exampleB4a.dir/exampleB4a.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/codes/toymodel/exampleB4a.cc -o CMakeFiles/exampleB4a.dir/exampleB4a.cc.s
 
+CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.o: CMakeFiles/exampleB4a.dir/flags.make
+CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.o: ../src/B3PhysicsList.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.o -c /root/codes/toymodel/src/B3PhysicsList.cc
+
+CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/codes/toymodel/src/B3PhysicsList.cc > CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.i
+
+CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/codes/toymodel/src/B3PhysicsList.cc -o CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.s
+
 CMakeFiles/exampleB4a.dir/src/B4DetectorConstruction.cc.o: CMakeFiles/exampleB4a.dir/flags.make
 CMakeFiles/exampleB4a.dir/src/B4DetectorConstruction.cc.o: ../src/B4DetectorConstruction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/exampleB4a.dir/src/B4DetectorConstruction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/exampleB4a.dir/src/B4DetectorConstruction.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exampleB4a.dir/src/B4DetectorConstruction.cc.o -c /root/codes/toymodel/src/B4DetectorConstruction.cc
 
 CMakeFiles/exampleB4a.dir/src/B4DetectorConstruction.cc.i: cmake_force
@@ -88,7 +101,7 @@ CMakeFiles/exampleB4a.dir/src/B4DetectorConstruction.cc.s: cmake_force
 
 CMakeFiles/exampleB4a.dir/src/B4PrimaryGeneratorAction.cc.o: CMakeFiles/exampleB4a.dir/flags.make
 CMakeFiles/exampleB4a.dir/src/B4PrimaryGeneratorAction.cc.o: ../src/B4PrimaryGeneratorAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/exampleB4a.dir/src/B4PrimaryGeneratorAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/exampleB4a.dir/src/B4PrimaryGeneratorAction.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exampleB4a.dir/src/B4PrimaryGeneratorAction.cc.o -c /root/codes/toymodel/src/B4PrimaryGeneratorAction.cc
 
 CMakeFiles/exampleB4a.dir/src/B4PrimaryGeneratorAction.cc.i: cmake_force
@@ -101,7 +114,7 @@ CMakeFiles/exampleB4a.dir/src/B4PrimaryGeneratorAction.cc.s: cmake_force
 
 CMakeFiles/exampleB4a.dir/src/B4RunAction.cc.o: CMakeFiles/exampleB4a.dir/flags.make
 CMakeFiles/exampleB4a.dir/src/B4RunAction.cc.o: ../src/B4RunAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/exampleB4a.dir/src/B4RunAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/exampleB4a.dir/src/B4RunAction.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exampleB4a.dir/src/B4RunAction.cc.o -c /root/codes/toymodel/src/B4RunAction.cc
 
 CMakeFiles/exampleB4a.dir/src/B4RunAction.cc.i: cmake_force
@@ -114,7 +127,7 @@ CMakeFiles/exampleB4a.dir/src/B4RunAction.cc.s: cmake_force
 
 CMakeFiles/exampleB4a.dir/src/B4aActionInitialization.cc.o: CMakeFiles/exampleB4a.dir/flags.make
 CMakeFiles/exampleB4a.dir/src/B4aActionInitialization.cc.o: ../src/B4aActionInitialization.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/exampleB4a.dir/src/B4aActionInitialization.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/exampleB4a.dir/src/B4aActionInitialization.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exampleB4a.dir/src/B4aActionInitialization.cc.o -c /root/codes/toymodel/src/B4aActionInitialization.cc
 
 CMakeFiles/exampleB4a.dir/src/B4aActionInitialization.cc.i: cmake_force
@@ -127,7 +140,7 @@ CMakeFiles/exampleB4a.dir/src/B4aActionInitialization.cc.s: cmake_force
 
 CMakeFiles/exampleB4a.dir/src/B4aEventAction.cc.o: CMakeFiles/exampleB4a.dir/flags.make
 CMakeFiles/exampleB4a.dir/src/B4aEventAction.cc.o: ../src/B4aEventAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/exampleB4a.dir/src/B4aEventAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/exampleB4a.dir/src/B4aEventAction.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exampleB4a.dir/src/B4aEventAction.cc.o -c /root/codes/toymodel/src/B4aEventAction.cc
 
 CMakeFiles/exampleB4a.dir/src/B4aEventAction.cc.i: cmake_force
@@ -140,7 +153,7 @@ CMakeFiles/exampleB4a.dir/src/B4aEventAction.cc.s: cmake_force
 
 CMakeFiles/exampleB4a.dir/src/B4aSteppingAction.cc.o: CMakeFiles/exampleB4a.dir/flags.make
 CMakeFiles/exampleB4a.dir/src/B4aSteppingAction.cc.o: ../src/B4aSteppingAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/exampleB4a.dir/src/B4aSteppingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/exampleB4a.dir/src/B4aSteppingAction.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exampleB4a.dir/src/B4aSteppingAction.cc.o -c /root/codes/toymodel/src/B4aSteppingAction.cc
 
 CMakeFiles/exampleB4a.dir/src/B4aSteppingAction.cc.i: cmake_force
@@ -154,6 +167,7 @@ CMakeFiles/exampleB4a.dir/src/B4aSteppingAction.cc.s: cmake_force
 # Object files for target exampleB4a
 exampleB4a_OBJECTS = \
 "CMakeFiles/exampleB4a.dir/exampleB4a.cc.o" \
+"CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.o" \
 "CMakeFiles/exampleB4a.dir/src/B4DetectorConstruction.cc.o" \
 "CMakeFiles/exampleB4a.dir/src/B4PrimaryGeneratorAction.cc.o" \
 "CMakeFiles/exampleB4a.dir/src/B4RunAction.cc.o" \
@@ -165,6 +179,7 @@ exampleB4a_OBJECTS = \
 exampleB4a_EXTERNAL_OBJECTS =
 
 exampleB4a: CMakeFiles/exampleB4a.dir/exampleB4a.cc.o
+exampleB4a: CMakeFiles/exampleB4a.dir/src/B3PhysicsList.cc.o
 exampleB4a: CMakeFiles/exampleB4a.dir/src/B4DetectorConstruction.cc.o
 exampleB4a: CMakeFiles/exampleB4a.dir/src/B4PrimaryGeneratorAction.cc.o
 exampleB4a: CMakeFiles/exampleB4a.dir/src/B4RunAction.cc.o
@@ -204,7 +219,7 @@ exampleB4a: /usr/local/geant4/lib/libG4intercoms.so
 exampleB4a: /usr/local/geant4/lib/libG4global.so
 exampleB4a: /usr/local/geant4/lib/libG4clhep.so
 exampleB4a: CMakeFiles/exampleB4a.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable exampleB4a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/codes/toymodel/bd/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable exampleB4a"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/exampleB4a.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

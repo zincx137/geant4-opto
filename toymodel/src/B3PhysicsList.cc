@@ -24,45 +24,40 @@
 // ********************************************************************
 //
 //
-/// \file B4aActionInitialization.cc
-/// \brief Implementation of the B4aActionInitialization class
+/// \file B3PhysicsList.cc
+/// \brief Implementation of the B3PhysicsList class
 
-#include "B4aActionInitialization.hh"
-#include "B4PrimaryGeneratorAction.hh"
-#include "B4RunAction.hh"
-#include "B4aEventAction.hh"
-#include "B4aSteppingAction.hh"
-#include "B4DetectorConstruction.hh"
+#include "B3PhysicsList.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+#include "G4DecayPhysics.hh"
+#include "G4EmStandardPhysics_option4.hh"
+#include "G4RadioactiveDecayPhysics.hh"
 
-B4aActionInitialization::B4aActionInitialization
-                            (B4DetectorConstruction* detConstruction)
- : G4VUserActionInitialization(),
-   fDetConstruction(detConstruction)
-{}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-B4aActionInitialization::~B4aActionInitialization()
-{}
+B3PhysicsList::B3PhysicsList() 
+: G4VModularPhysicsList(){
+  SetVerboseLevel(1);
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  // Default physics
+//  RegisterPhysics(new G4DecayPhysics());
+  // EM physics
+  RegisterPhysics(new G4EmStandardPhysics_option4());
 
-void B4aActionInitialization::BuildForMaster() const
-{
-  SetUserAction(new B4RunAction);
+  // Radioactive decay
+
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void B4aActionInitialization::Build() const
-{
-  SetUserAction(new B4PrimaryGeneratorAction);
-  SetUserAction(new B4RunAction);
-  auto eventAction = new B4aEventAction;
-  SetUserAction(eventAction);
-//  SetUserAction(new B4aSteppingAction(fDetConstruction,eventAction));
-}  
+B3PhysicsList::~B3PhysicsList()
+{ 
+}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void B3PhysicsList::SetCuts()
+{
+  G4VUserPhysicsList::SetCuts();
+}  

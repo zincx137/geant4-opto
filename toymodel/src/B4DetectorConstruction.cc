@@ -55,7 +55,6 @@
 B4DetectorConstruction::B4DetectorConstruction()
  : G4VUserDetectorConstruction(),
    fAbsorberPV(nullptr),
-   fGapPV(nullptr),
    fCheckOverlaps(true)
 {
 }
@@ -99,7 +98,7 @@ void B4DetectorConstruction::DefineMaterials()
                   kStateGas, 2.73*kelvin, 3.e-18*pascal);
 
   // Print materials
-  G4cout << *(G4Material::GetMaterialTable()) << G4endl;
+//  G4cout << *(G4Material::GetMaterialTable()) << G4endl;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -108,14 +107,14 @@ G4VPhysicalVolume* B4DetectorConstruction::DefineVolumes()
 {
   // Geometry parameters
   G4int nofLayers = 1;
-  G4double absoThickness = 0.05*mm;
-  G4double gapThickness =  0.15*mm;
-  G4double calorSizeXY  = 0.3*mm;
+  G4double absoThickness = 1*mm;
+  G4double gapThickness =  0.*mm;
+  G4double calorSizeXY  = 0.4*mm;
 
   auto layerThickness = absoThickness + gapThickness;
   auto calorThickness = nofLayers * layerThickness;
   auto worldSizeXY = 1.2 * calorSizeXY;
-  auto worldSizeZ  = 1.2 * calorThickness; 
+  auto worldSizeZ  = 1.2 * calorThickness;
   
   // Get materials
   auto defaultMaterial = G4Material::GetMaterial("Galactic");
@@ -170,7 +169,7 @@ G4VPhysicalVolume* B4DetectorConstruction::DefineVolumes()
   fAbsorberPV
     = new G4PVPlacement(
                  0,                // no rotation
-                 G4ThreeVector(0., 0., absoThickness/2), // its position
+                 G4ThreeVector(0., 0., 0), // its position
                  absorberLV,       // its logical volume                         
                  "Abso",           // its name
                  worldLV,          // its mother  volume
@@ -181,38 +180,38 @@ G4VPhysicalVolume* B4DetectorConstruction::DefineVolumes()
   //                               
   // Gap
   //
-  auto gapS 
-    = new G4Box("Gap",             // its name
-                 calorSizeXY/2, calorSizeXY/2, gapThickness/2); // its size
+//  auto gapS
+//    = new G4Box("Gap",             // its name
+//                 calorSizeXY/2, calorSizeXY/2, gapThickness/2); // its size
                          
-  auto gapLV
-    = new G4LogicalVolume(
-                 gapS,             // its solid
-                 gapMaterial,      // its material
-                 "Gap");           // its name
+//  auto gapLV
+//    = new G4LogicalVolume(
+//                 gapS,             // its solid
+//                 gapMaterial,      // its material
+//                 "Gap");           // its name
                                    
-  fGapPV
-    = new G4PVPlacement(
-                 0,                // no rotation
-                 G4ThreeVector(0., 0., -gapThickness/2), // its position
-                 gapLV,            // its logical volume                         
-                 "Gap",            // its name
-                 worldLV,          // its mother  volume
-                 false,            // no boolean operation
-                 2,                // copy number
-                 fCheckOverlaps);  // checking overlaps 
+//  fGapPV
+//    = new G4PVPlacement(
+//                 0,                // no rotation
+//                 G4ThreeVector(0., 0., -gapThickness/2), // its position
+//                 gapLV,            // its logical volume
+//                 "Gap",            // its name
+//                 worldLV,          // its mother  volume
+//                 false,            // no boolean operation
+//                 2,                // copy number
+//                 fCheckOverlaps);  // checking overlaps
   
   //
   // print parameters
   //
-  G4cout
-    << G4endl 
-    << "------------------------------------------------------------" << G4endl
-    << "---> The calorimeter is " << nofLayers << " layers of: [ "
-    << absoThickness/mm << "mm of " << absorberMaterial->GetName() 
-    << " + "
-    << gapThickness/mm << "mm of " << gapMaterial->GetName() << " ] " << G4endl
-    << "------------------------------------------------------------" << G4endl;
+  G4cout << "absoThickness:" << absoThickness << "mm" <<G4endl;
+//    << G4endl
+//    << "------------------------------------------------------------" << G4endl
+//    << "---> The calorimeter is " << nofLayers << " layers of: [ "
+//    << absoThickness/mm << "mm of " << absorberMaterial->GetName()
+//    << " + "
+//    << gapThickness/mm << "mm of " << gapMaterial->GetName() << " ] " << G4endl
+//    << "------------------------------------------------------------" << G4endl;
   
 
   //
