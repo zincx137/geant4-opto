@@ -1,0 +1,7 @@
+/root/codes/PhotonEvent/bd/CMakeFiles/install/strip.dir
+/root/codes/PhotonEvent/bd/CMakeFiles/install/local.dir
+/root/codes/PhotonEvent/bd/CMakeFiles/exampleB4a.dir
+/root/codes/PhotonEvent/bd/CMakeFiles/rebuild_cache.dir
+/root/codes/PhotonEvent/bd/CMakeFiles/edit_cache.dir
+/root/codes/PhotonEvent/bd/CMakeFiles/install.dir
+/root/codes/PhotonEvent/bd/CMakeFiles/list_install_components.dir

@@ -1,0 +1,18 @@
+# Macro file for example B4
+# 
+# Can be run in batch, without graphic
+# or interactively: Idle> /control/execute run1.mac
+#
+# Change the default number of workers (in multi-threading mode) 
+/run/numberOfThreads 1
+#
+# Initialize kernel
+/run/initialize
+#
+# Default kinematics: 
+# photon 511 keV in direction (0.,0.,-1.)
+# 1 event with tracking/verbose
+#
+/tracking/verbose 1
+/run/beamOn 10000
+
